@@ -121,7 +121,22 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.karaf.tooling</groupId>
+				<artifactId>features-maven-plugin</artifactId>
+				<version>2.2.8</version>
+				<executions>
+					<execution>
+						<id>create-kar</id>
+						<goals>
+							<goal>create-kar</goal>
+						</goals>
+						<configuration>
+							<featuresFile>src/main/resources/features.xml</featuresFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<!-- to generate the MANIFEST.MF of the bundle -->
 
 			<plugin>
