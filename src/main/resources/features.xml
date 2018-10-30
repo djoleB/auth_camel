@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<features>
+	<feature name='Humanity-camels' version='2.22.1' install="auto">
+		<bundle>mvn:org.apache.camel/camel-core/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-core-osgi/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-http/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-jsonpath/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-sql/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-gson/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-restlet/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-blueprint/2.22.1</bundle>
+		<bundle>mvn:org.apache.camel/camel-jdbc/2.22.1</bundle>
+		<bundle>wrap:mvn:mysql/mysql-connector-java/5.1.6</bundle>
+		<bundle>wrap:mvn:commons-dbcp/commons-dbcp/1.4</bundle>
+		<bundle>wrap:mvn:commons-pool/commons-pool/1.4</bundle>
+	</feature>
+
+	<feature
+		name='Humanity-${project.artifactId}-${project.version}'
+		version='${project.version}'>
+		<bundle>mvn:Authentication/Authorization/0.0.4-SNAPSHOT/jar</bundle>
+	</feature>
+</features>
