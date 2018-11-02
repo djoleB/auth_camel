@@ -12,6 +12,15 @@
 
 	<name>A Camel Blueprint Route</name>
 
+
+	<developers>
+		<developer>
+			<id>djordje.bajic</id>
+			<name>Djordje Bajic</name>
+			<email>djordje.bajic@humanity.com</email>
+		</developer>
+	</developers>
+
 	<properties>
 		<osgi.version>6.0.0</osgi.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -97,12 +106,31 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
+		<defaultGoal>install</defaultGoal>
+		<resources>
+			<!-- globally enable resource filtering -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<!-- then disable it for specific resources -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*-context.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/feature</directory>
+				<filtering>true</filtering>
+				<targetPath>${project.build.directory}/feature</targetPath>
+			</resource>
+		</resources>
 		<plugins>
-
 			<!-- compiler plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -121,7 +149,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.karaf.tooling</groupId>
 				<artifactId>features-maven-plugin</artifactId>
