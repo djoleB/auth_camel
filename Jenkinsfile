@@ -43,7 +43,7 @@ pipeline{
 				echo "Deploying to FTP..."
 				ftpPublisher paramPublish: null, masterNodeName: '', alwaysPublishFromMaster: true, continueOnError: false, failOnError: true, publishers: [
                 [configName: 'Test', transfers: [
-                    [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.kar, **.txt, **.pom, **.jar']
+                    [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '/target']
                 ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
             ]
 			}
