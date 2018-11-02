@@ -41,9 +41,9 @@ pipeline{
 		stage('Deploy') {
 			steps{
 				echo "Deploying to FTP..."
-				ftpPublisher alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
+				ftpPublisher paramPublish: null, alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
                 [configName: 'Test', transfers: [
-                    [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.exe, **.txt']
+                    [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "/deploy", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.exe, **.txt']
                 ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
             ]
 			}
