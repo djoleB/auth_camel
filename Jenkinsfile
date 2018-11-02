@@ -39,7 +39,7 @@ pipeline{
 		}
 		
 		stage('Deploy') {
-			steps{
+			steps{ 
 				echo "Deploying to FTP..."
 				ftpPublisher paramPublish: null, masterNodeName: '', alwaysPublishFromMaster: true, continueOnError: false, failOnError: true, publishers: [
                 [configName: 'Test', transfers: [
