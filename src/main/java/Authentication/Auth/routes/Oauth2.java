@@ -21,6 +21,10 @@ public class Oauth2 extends RouteBuilder {
 		from("direct:nesto2")
 		.setBody().constant("{\"method\":\"POST\"}").to("mock:nesto");
 		
+		from("timer:foo?period=15000")
+		.log("Started!")
+		.to("mock:123321");
+		
 	}
 
 }
