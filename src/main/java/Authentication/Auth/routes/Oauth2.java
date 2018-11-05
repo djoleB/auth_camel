@@ -7,7 +7,7 @@ public class Oauth2 extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 
-		restConfiguration()
+		/*restConfiguration()
         .component("restlet")
         .host("localhost").port("8080");
 		
@@ -20,7 +20,7 @@ public class Oauth2 extends RouteBuilder {
 		
 		from("direct:nesto2")
 		.setBody().constant("{\"method\":\"POST\"}").to("mock:nesto");
-		
+		*/
 		from("timer:foo?period=15000")
 		.log("Started!")
 		.to("mock:123321");
