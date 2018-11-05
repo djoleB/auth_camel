@@ -11,9 +11,9 @@
 		<bundle>mvn:org.apache.camel/camel-restlet/2.22.1</bundle>
 		<bundle>mvn:org.apache.camel/camel-blueprint/2.22.1</bundle>
 		<bundle>mvn:org.apache.camel/camel-jdbc/2.22.1</bundle>
-		<bundle>wrap:mvn:mysql/mysql-connector-java/5.1.6</bundle>
+		<!-- <bundle>wrap:mvn:mysql/mysql-connector-java/5.1.6</bundle>
 		<bundle>wrap:mvn:commons-dbcp/commons-dbcp/1.4</bundle>
-		<bundle>wrap:mvn:commons-pool/commons-pool/1.4</bundle>
+		<bundle>wrap:mvn:commons-pool/commons-pool/1.4</bundle> -->
 	</feature>
 
 	<feature

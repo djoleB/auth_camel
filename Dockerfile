@@ -13,9 +13,17 @@ RUN wget http://www-us.apache.org/dist/karaf/${KARAF_VERSION}/apache-karaf-${KAR
     sed -i 's/^\(felix\.fileinstall\.dir\s*=\s*\).*$/\1\/deploy/' /opt/karaf/etc/org.apache.felix.fileinstall-deploy.cfg
 
 RUN wget ftp://${USER}:${PASS}@192.168.9.20/deploy/target/Authorization-0.0.4-SNAPSHOT.kar;\	
-	mv Authorization-0.0.4-SNAPSHOT.kar /opt/karaf/deploy;
+	mv Authorization-0.0.4-SNAPSHOT.kar /opt/karaf;
 
-RUN echo "feature:install /opt/karaf/deploy/target/features.xml" |  /opt/karaf/bin/karaf
+RUN echo "feature:repo-add camel 2.22.1" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-jsonpath" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-http4" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-sql" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-gson" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-restlet" | /opt/karaf/bin/karaf;
+RUN echo "feature:install camel-blueprint" | /opt/karaf/bin/karaf;
+
+RUN echo "kar:install file:/opt/karaf/Authorization-0.0.4-SNAPSHOT.kar" |  /opt/karaf/bin/karaf;
 
 VOLUME ["/deploy"]
 EXPOSE 1099 8101 44444
