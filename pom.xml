@@ -10,7 +10,7 @@
 	<version>0.0.4-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
-	<name>A Camel Blueprint Route</name>
+	<name>Humanity - Auth</name>
 
 
 	<developers>
