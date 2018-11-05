@@ -14,8 +14,8 @@
 	</feature>
 
 	<feature
-		name='Humanity-${project.artifactId}-${project.version}'
-		version='${project.version}'>
+		name='Humanity-Authorization-Authentication'
+		version='0.0.4-SNAPSHOT'>
 		<bundle>mvn:Authentication/Authorization/0.0.4-SNAPSHOT/jar</bundle>
 	</feature>
 </features>
