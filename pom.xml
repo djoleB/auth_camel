@@ -111,6 +111,7 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<resources>
+		
 			<!-- globally enable resource filtering -->
 			<resource>
 				<directory>src/main/resources</directory>
