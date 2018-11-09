@@ -98,6 +98,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
+		<dependency>
+			<groupId>io.hawt</groupId>
+			<artifactId>hawtio-karaf</artifactId>
+			<version>2.1.0</version>
+			<classifier>features</classifier>
+			<scope>runtime</scope>
+			<type>xml</type>
+		</dependency>
 	</dependencies>
 
 	<build>
