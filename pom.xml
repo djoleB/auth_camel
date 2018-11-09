@@ -111,7 +111,7 @@
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<resources>
-		
+
 			<!-- globally enable resource filtering -->
 			<resource>
 				<directory>src/main/resources</directory>
@@ -132,6 +132,20 @@
 			</resource>
 		</resources>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.karaf.tooling</groupId>
+				<artifactId>karaf-maven-plugin</artifactId>
+				<configuration>
+					<installedFeatures />
+					<!-- <startupFeatures/> -->
+					<bootFeatures>
+						<!-- standard distribution -->
+						<feature>standard</feature>
+						<feature>hawtio-offline</feature>
+					</bootFeatures>
+					<javase>1.8</javase>
+				</configuration>
+			</plugin>
 			<!-- compiler plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
