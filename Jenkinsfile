@@ -50,8 +50,8 @@ pipeline{
         }*/
         stage('build_docker_image') {
             steps {
-                sh "ls *"
                 echo "=========== Build Docker Image! ==========="
+                sh 'ls *'
                 sh 'docker-compose build'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
