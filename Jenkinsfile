@@ -3,7 +3,6 @@
 pipeline{
 	agent {
 		any
-		dockerfile true
 	}
 	
 	tools {
