@@ -1,7 +1,10 @@
 #!groovy
 
 pipeline{
-	agent any
+	agent {
+		any
+		dockerfile true
+	}
 	
 	tools {
 		maven 'Maven 3.5.4'
