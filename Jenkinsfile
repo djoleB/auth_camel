@@ -51,7 +51,7 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-                bat 'ls *'
+                bat 'dir'
                 bat 'docker build -t auth_camel_karaf'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
