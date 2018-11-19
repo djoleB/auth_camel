@@ -2,7 +2,6 @@
 
 pipeline{
     agent any
-    def app
     tools {
         maven 'Maven 3.5.4'
         jdk 'jdk8'
@@ -15,6 +14,7 @@ pipeline{
 
     environment{
         chatChannel = 'camel_jenkins'
+        app
     }
 
     stages {
