@@ -14,7 +14,6 @@ pipeline{
 
     environment{
         chatChannel = 'camel_jenkins'
-        app
     }
 
     stages {
@@ -51,9 +50,8 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-                /*bat 'dir'
-                bat 'docker-compose build'*/
-                app = docker build("auth_camel_karaf")
+                bat 'dir'
+                bat 'docker-compose build'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
