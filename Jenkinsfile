@@ -52,7 +52,7 @@ pipeline{
             steps {
                 echo "=========== Build Docker Image! ==========="
                 sh 'ls *'
-                sh 'docker-compose build'
+                sh 'docker build -t auth_camel_karaf'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
