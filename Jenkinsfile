@@ -50,11 +50,10 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-               /* bat 'dir'
+                bat 'dir'
                 bat 'docker-compose build'*/
-		script {
-			docker.build registry	
-		}
+		bat 'docker image ls'
+		bat 'docker ps
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
