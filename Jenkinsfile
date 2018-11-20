@@ -17,6 +17,13 @@ pipeline{
     }
 
     stages {
+	
+	stage('clone') {
+		steps{
+			git 'https://github.com/djoleB/auth_camel.git'
+		}
+	}
+	    
         stage('Build') {
             steps{
                 echo "Building..."
