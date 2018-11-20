@@ -19,7 +19,6 @@ pipeline{
     }
 	
    stages {
-   	node {  
 	def app
         stage('Build') {
             steps{
@@ -63,10 +62,9 @@ pipeline{
         }*/
 	stage('build_image') {
 		steps {
-			app = docker.build('auth_camel_karaf')
+			docker.build('auth_camel_karaf')
 		}
 	}
 	    
 	}
-   }
 }
