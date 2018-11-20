@@ -60,10 +60,12 @@ pipeline{
             }
         }*/
 	stage('build_image') {
-		node{
-			deff app
+		steps {
+			node{
+				deff app
 			
-			app = docker.build('auth_camel_karaf')
+				app = docker.build('auth_camel_karaf')
+			}
 		}
 	}
 	    
