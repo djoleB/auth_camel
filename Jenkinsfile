@@ -12,8 +12,8 @@ pipeline{
 
     environment{
         chatChannel = 'camel_jenkins'
-		registry = "docker_hub_account/repository_name"
-		registryCredential = 'dockerhub'
+	registry = "docker_hub_account/repository_name"
+	registryCredential = 'dockerhub'
     }
 
     stages {
@@ -50,9 +50,9 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-                bat 'dir'
-                bat 'docker-compose build'
-		bat 'docker image ls'
+		    script {
+		    	docker.build registry
+		    }
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
