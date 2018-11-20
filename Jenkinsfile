@@ -63,12 +63,5 @@ pipeline{
             }
         }
 	    
-	stage ('build_image') {
-		
-			def app
-			app = docker.build('auth_camel_karaf')
-		  	sh 'echo "Test passed"'
 	}
-	}
-}
 }
