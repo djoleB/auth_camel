@@ -48,7 +48,7 @@ pipeline{
                         ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
                 ]
             }
-        }*/
+        }
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
@@ -58,7 +58,14 @@ pipeline{
 				}
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
-        }
+        }*/
+	stage('build_image') {
+		node{
+			deff app
+			
+			app = docker.build('auth_camel_karaf')
+		}
+	}
 	    
 	}
 }
