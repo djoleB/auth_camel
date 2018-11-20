@@ -20,8 +20,7 @@ pipeline{
 	registryCredential = 'dockerhub'
     }
 
-   // stages {  
-	node {
+   stages {  
         stage('Build') {
             steps{
                 echo "Building..."
