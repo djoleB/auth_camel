@@ -19,7 +19,6 @@ pipeline{
     }
 	
    stages {
-	def app
         stage('Build') {
             steps{
                 echo "Building..."
