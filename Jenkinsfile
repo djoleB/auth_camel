@@ -17,9 +17,9 @@ pipeline{
 	registry = "docker_hub_account/repository_name"
 	registryCredential = 'dockerhub'
     }
-
-   node {  
-	   stages {
+	
+   stages {
+   	node {  
 	def app
         stage('Build') {
             steps{
