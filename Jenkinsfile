@@ -1,5 +1,3 @@
-#!groovy
-
 pipeline{
     agent {dockerfile true}
     tools {
@@ -14,6 +12,8 @@ pipeline{
 
     environment{
         chatChannel = 'camel_jenkins'
+		registry = "docker_hub_account/repository_name"
+		registryCredential = 'dockerhub'
     }
 
     stages {
@@ -50,8 +50,9 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-                bat 'dir'
-                bat 'docker-compose build'
+               /* bat 'dir'
+                bat 'docker-compose build'*/
+				docker.build registry + ":$BUILD_NUMBER"
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
