@@ -1,10 +1,10 @@
-#groovy
+#!groovy
 
 pipeline{
 	agent {
 		dockerfile {
-            filename 'Dockerfile'
-    	}
+                	filename 'Dockerfile'
+    		}
 	}
     tools {
         maven 'Maven 3.5.4'
