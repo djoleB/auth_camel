@@ -52,7 +52,9 @@ pipeline{
                 echo "=========== Build Docker Image! ==========="
                /* bat 'dir'
                 bat 'docker-compose build'*/
-		docker.build registry
+		script {
+			docker.build registry	
+		}
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
