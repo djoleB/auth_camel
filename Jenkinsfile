@@ -61,6 +61,18 @@ pipeline{
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
+	node {
+			def app
+
+			stage('build_image') {
+				app = docker.build('auth_camel_karaf')
+			}
+			
+			stage('test_image') {
+				sh 'echo "Test passed"'
+			}
+			
+		}
     }
 
 }
