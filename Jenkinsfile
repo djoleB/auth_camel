@@ -1,8 +1,10 @@
+#groovy
+
 pipeline{
 	agent {
 		dockerfile {
-                	filename 'Dockerfile'
-    		}
+            filename 'Dockerfile'
+    	}
 	}
     tools {
         maven 'Maven 3.5.4'
@@ -54,10 +56,10 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
-		    bat 'dir'
-		    script {
-		    	docker.build registry + ":$BUILD_NUMBER"
-		    }
+				bat 'dir'
+				script {
+					docker.build registry + ":$BUILD_NUMBER"
+				}
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
