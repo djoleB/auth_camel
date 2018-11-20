@@ -18,7 +18,8 @@ pipeline{
 	registryCredential = 'dockerhub'
     }
 
-   stages {  
+   node {  
+	def app
         stage('Build') {
             steps{
                 echo "Building..."
@@ -61,11 +62,7 @@ pipeline{
         }*/
 	stage('build_image') {
 		steps {
-			node{
-				deff app
-			
-				app = docker.build('auth_camel_karaf')
-			}
+			app = docker.build('auth_camel_karaf')
 		}
 	}
 	    
