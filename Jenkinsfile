@@ -16,14 +16,7 @@ pipeline{
 	registryCredential = 'dockerhub'
     }
 
-    stages {
-	
-	stage('clone') {
-		steps{
-			git 'https://github.com/djoleB/auth_camel.git'
-		}
-	}
-	    
+    stages {  
         stage('Build') {
             steps{
                 echo "Building..."
@@ -57,6 +50,7 @@ pipeline{
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
+		    bat 'dir'
 		    script {
 		    	docker.build registry + ":$BUILD_NUMBER"
 		    }
