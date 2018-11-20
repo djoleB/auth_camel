@@ -19,6 +19,7 @@ pipeline{
     }
 
    node {  
+	   stages {
 	def app
         stage('Build') {
             steps{
@@ -67,4 +68,5 @@ pipeline{
 	}
 	    
 	}
+   }
 }
