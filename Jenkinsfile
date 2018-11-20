@@ -2,9 +2,7 @@
 
 pipeline{
 	agent {
-		dockerfile {
-                	filename 'Dockerfile'
-    		}
+		dockerfile true
 	}
     tools {
         maven 'Maven 3.5.4'
