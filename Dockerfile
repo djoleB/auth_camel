@@ -1,6 +1,8 @@
 FROM java:8-jdk
 MAINTAINER diteam
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV PASS Zadrzisvojdah1	
+ENV USER djordje%20bajic
 ENV KARAF_VERSION=4.2.1
 
 RUN wget http://www-us.apache.org/dist/karaf/${KARAF_VERSION}/apache-karaf-${KARAF_VERSION}.tar.gz; \
