@@ -2,7 +2,6 @@ FROM java:8-jdk
 MAINTAINER diteam
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV PASS Zadrzisvojdah1	
-ENV USER djordje%20bajic
 ENV KARAF_VERSION=4.2.1
 
 RUN wget http://www-us.apache.org/dist/karaf/${KARAF_VERSION}/apache-karaf-${KARAF_VERSION}.tar.gz; \
@@ -12,7 +11,7 @@ RUN wget http://www-us.apache.org/dist/karaf/${KARAF_VERSION}/apache-karaf-${KAR
     mkdir /deploy; \
     sed -i 's/^\(felix\.fileinstall\.dir\s*=\s*\).*$/\1\/deploy/' /opt/karaf/etc/org.apache.felix.fileinstall-deploy.cfg
 
-RUN wget ftp://${USER}:${PASS}@192.168.9.20/deploy/target/Authorization-0.0.4-SNAPSHOT.kar;\	
+RUN wget ftp://djordjebajic:${PASS}@192.168.9.20/deploy/target/Authorization-0.0.4-SNAPSHOT.kar;\	
 	mv Authorization-0.0.4-SNAPSHOT.kar /opt/karaf;
 
 RUN echo "feature:repo-add camel 2.22.1" | /opt/karaf/bin/karaf; \
