@@ -48,23 +48,17 @@ pipeline{
                         ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
                 ]
             }
-        }
+        }*/
+	   
         stage('build_docker_image') {
             steps {
                 echo "=========== Build Docker Image! ==========="
 				bat 'dir'
-				script {
-					docker.build registry + ":$BUILD_NUMBER"
-				}
+				sh 'docker-compose build'
+		    		sh 'docker image ls'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
-        }*/
-	stage('build_image') {
-		node('linux') {
-                	def app
-                	app = docker.build("auth_camel_karaf")
-            	}
-	}
-	    
+        }
+    
 	}
 }
