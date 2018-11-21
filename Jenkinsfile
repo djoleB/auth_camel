@@ -52,6 +52,11 @@ pipeline{
 	   
         stage('build_docker_image') {
             steps {
+		    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'maven.humanity.com',
+                              usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                echo "$env.USERNAME"
+            }
+		    
                 echo "=========== Build Docker Image! ==========="
 				bat 'dir'
 				bat 'docker build -t auth_camel .'
