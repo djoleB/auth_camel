@@ -40,18 +40,18 @@ pipeline{
         }
 	   
         stage('build_docker_image') {	    
-                echo "=========== Build Docker Image! ==========="
 				/*bat 'dir'
 				bat 'docker build -t auth_camel .'
 		    		bat 'docker image ls'*/
 		steps {
+			echo "=========== Build Docker Image! ==========="
+
 			script {
 				def app 
 				app = docker.build("auth_camel")
 			}
-		}
                 echo "=========== FINISHED - Build Docker Image! ==========="
-
+		}
         }
     
 	}
