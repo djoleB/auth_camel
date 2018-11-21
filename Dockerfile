@@ -1,5 +1,5 @@
 FROM java:8-jdk
-MAINTAINER mkroli
+MAINTAINER diteam
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV PASS Zadrzisvojdah1
 ENV USER djordje%20bajic
