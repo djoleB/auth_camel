@@ -13,7 +13,8 @@ pipeline{
     }
 
     environment{
-        chatChannel = 'camel_jenkins'
+	aws_user =  ${env.username}
+	aws_pass = ${env.password}
 	registry = "docker_hub_account/repository_name"
 	registryCredential = 'dockerhub'
     }
@@ -44,7 +45,7 @@ pipeline{
             steps {
 		    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'maven.humanity.com',
                               usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-			    echo "${env.USERNAME}"
+			    echo "${env.user}"
             }
 		    
                 echo "=========== Build Docker Image! ==========="
