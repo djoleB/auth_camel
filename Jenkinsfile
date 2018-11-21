@@ -54,7 +54,7 @@ pipeline{
             steps {
                 echo "=========== Build Docker Image! ==========="
 				bat 'dir'
-				bat 'docker-compose build'
+				bat 'docker build -t auth_camel'
 		    		bat 'docker image ls'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
