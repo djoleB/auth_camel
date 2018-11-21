@@ -18,7 +18,7 @@ RUN echo "feature:repo-add camel 2.22.1" | /opt/karaf/bin/karaf; \
 	echo "feature:install camel-core camel-jsonpath camel-http camel-sql camel-gson camel-restlet camel-blueprint" | /opt/karaf/bin/karaf; \
 	echo "kar:install file:/opt/karaf/Authorization-0.0.4-SNAPSHOT.kar" | /opt/karaf/bin/karaf;\
 	echo "kar:list" | /opt/karaf/bin/karaf;\
-	echo "feature:install Humanity-Authorization-Authentication" | /opt/karaf/bin/karaf;\
+	echo "feature:install Humanity-Authorization-Authentication" | /opt/karaf/bin/karaf;
 	
 VOLUME ["/deploy"]
 EXPOSE 1099 8101 44444
