@@ -51,7 +51,7 @@ pipeline{
 			}
 		}
                 echo "=========== FINISHED - Build Docker Image! ==========="
-            }
+
         }
     
 	}
