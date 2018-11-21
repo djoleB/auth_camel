@@ -44,7 +44,7 @@ pipeline{
             steps {
 		    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'maven.humanity.com',
                               usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-                echo "$env.USERNAME"
+			    echo "${env.USERNAME}"
             }
 		    
                 echo "=========== Build Docker Image! ==========="
