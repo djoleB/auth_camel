@@ -54,8 +54,8 @@ pipeline{
             steps {
                 echo "=========== Build Docker Image! ==========="
 				bat 'dir'
-				sh 'docker-compose build'
-		    		sh 'docker image ls'
+				bat 'docker-compose build'
+		    		bat 'docker image ls'
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
