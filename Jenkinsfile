@@ -19,6 +19,16 @@ pipeline{
     }
 	
    stages {
+	stage('Build') {
+            steps{
+                echo "Building..."
+                withMaven(maven: 'Maven 3.5.4') {
+                    bat "mvn clean install"
+                }
+            }
+
+        }
+
         stage('Deploy') {
             steps{
                 echo "Deploying to FTP..."
