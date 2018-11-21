@@ -39,7 +39,7 @@ pipeline{
             }
         }
 
-        /*stage('Deploy') {
+        stage('Deploy') {
             steps{
                 echo "Deploying to FTP..."
                 ftpPublisher paramPublish: null, masterNodeName: '', alwaysPublishFromMaster: true, continueOnError: false, failOnError: true, publishers: [
@@ -48,7 +48,7 @@ pipeline{
                         ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
                 ]
             }
-        }*/
+        }
 	   
         stage('build_docker_image') {
             steps {
