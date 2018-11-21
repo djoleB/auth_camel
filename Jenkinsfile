@@ -13,8 +13,6 @@ pipeline{
     }
 
     environment{
-	aws_user =  ${env.username}
-	aws_pass = ${env.password}
 	registry = "docker_hub_account/repository_name"
 	registryCredential = 'dockerhub'
     }
