@@ -44,9 +44,11 @@ pipeline{
 				/*bat 'dir'
 				bat 'docker build -t auth_camel .'
 		    		bat 'docker image ls'*/
-		script {
-			def app 
-			app = docker.build("auth_camel")
+		steps {
+			script {
+				def app 
+				app = docker.build("auth_camel")
+			}
 		}
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
