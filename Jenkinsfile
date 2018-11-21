@@ -39,17 +39,15 @@ pipeline{
             }
         }
 	   
-        stage('build_docker_image') {
-            steps {
-		    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'maven.humanity.com',
-                              usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-			    echo "${env.user}"
-            }
-		    
+        stage('build_docker_image') {	    
                 echo "=========== Build Docker Image! ==========="
-				bat 'dir'
+				/*bat 'dir'
 				bat 'docker build -t auth_camel .'
-		    		bat 'docker image ls'
+		    		bat 'docker image ls'*/
+		script {
+			def app 
+			app = docker.build("auth_camel")
+		}
                 echo "=========== FINISHED - Build Docker Image! ==========="
             }
         }
